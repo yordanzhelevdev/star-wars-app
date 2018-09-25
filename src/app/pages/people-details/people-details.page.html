@@ -1,9 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>peopleDetails</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(people:people)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{person.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-card *ngIf="person">
+    <ion-card-content>
+      Name:
+    </ion-card-content>
+  </ion-card>
 </ion-content>

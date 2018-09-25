@@ -20,8 +20,16 @@ export class ApiService {
     return this.http.get('https://swapi.co/api/people');
   }
 
+  getPerson(id) {
+    return this.http.get(`https://swapi.co/api/people/${id}`);
+  }
+
   getPlanets() {
     return this.http.get('https://swapi.co/api/planets');
+  }
+  
+  getPlanet(id) {
+    return this.http.get(`https://swapi.co/api/planets/${id}`);
   }
 
 }
