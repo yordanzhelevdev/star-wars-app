@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { Injectable } from "@angular/core";
+import { Storage } from "@ionic/storage";
 
-const STORAGE_KEY = 'favoriteFilms';
+const STORAGE_KEY = "favoriteFilms";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class FavoriteService {
-
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage) {}
 
   getAllFavoriteFilms() {
     return this.storage.get(STORAGE_KEY);
@@ -22,21 +21,22 @@ export class FavoriteService {
 
   favoriteFilm(filmId) {
     return this.getAllFavoriteFilms().then(result => {
-      if(result) {
+      if (result) {
         result.push(filmId);
-        return this.storage.set(STORAGE_KEY,result);
+        return this.storage.set(STORAGE_KEY, result);
+      } else {
+        return this.storage.set(STORAGE_KEY, [filmId]);
       }
     });
   }
 
   unfavoriteFilm(filmId) {
     return this.getAllFavoriteFilms().then(result => {
-      if(result) {
+      if (result) {
         let index = result.indexOf(filmId);
         result.splice(index, 1);
         return this.storage.set(STORAGE_KEY, result);
       }
     });
   }
-
 }

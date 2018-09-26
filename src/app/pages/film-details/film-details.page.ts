@@ -39,7 +39,7 @@ export class FilmDetailsPage implements OnInit {
     });
   }
 
-  unFavoriteFilm() {
+  unfavoriteFilm() {
     this.favoriteService.unfavoriteFilm(this.filmId).then( () => {
       this.isFavorite = false;
     });
