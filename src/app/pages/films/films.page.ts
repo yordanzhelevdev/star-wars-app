@@ -21,7 +21,6 @@ export class FilmsPage implements OnInit {
     this.films = this.api.getFilms();
   }
   
-
   openDetails(film) {
     let split = film.url.split('/');
     let filmId = split[split.length-2];
