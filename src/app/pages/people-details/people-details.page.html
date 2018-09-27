@@ -8,37 +8,42 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngIf="person" lines="inset">
-    <ion-item color="dark">
-      <h2>{{person.name}}</h2>
-    </ion-item>
-    <ion-item>
-      <ion-label>Birth Year:</ion-label>
-      <ion-note slot="end">{{person.birth_year}}</ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Gender:</ion-label>
-      <ion-note slot="end">{{person.gender}}</ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mass:</ion-label>
-      <ion-note slot="end">
-        {{person.mass}}
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Height:</ion-label>
-      <ion-note slot="end">
-        {{person.height}}
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Hair Color:</ion-label>
-      <ion-note slot="end">{{person.hair_color}}</ion-note>
-    </ion-item>
-    <ion-item>
-      <ion-label>Eye Color:</ion-label>
-      <ion-note slot="end">{{person.eye_color}}</ion-note>
-    </ion-item>
-  </ion-list>
+  <ion-card *ngIf="person">
+    <ion-card-header>
+      <ion-card-title>{{person.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngIf="person" lines="inset">
+        <ion-item>
+          <ion-label>Birth Year:</ion-label>
+          <ion-note slot="end">{{person.birth_year}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Gender:</ion-label>
+          <ion-note slot="end">{{person.gender}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mass:</ion-label>
+          <ion-note slot="end">
+            {{person.mass}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Height:</ion-label>
+          <ion-note slot="end">
+            {{person.height}}
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hair Color:</ion-label>
+          <ion-note slot="end">{{person.hair_color}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Eye Color:</ion-label>
+          <ion-note slot="end">{{person.eye_color}}</ion-note>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
